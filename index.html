@@ -18,16 +18,30 @@
   <main>
     <canvas id="gameCanvas" width="960" height="640"></canvas>
     <aside class="panel">
-      <h2>Starting Factory</h2>
-      <p>Use this prototype to watch a small automated factory. It includes:</p>
-      <ul>
-        <li>A single printer that spawns products</li>
-        <li>Conveyor belts that carry products</li>
-        <li>A selling station that auto-sells products</li>
-      </ul>
-      <p>Open developer console to see logs.</p>
+      <h2>Factory</h2>
+      <p>Drag-and-place mode. Select an item from the shop and click a grid cell to place it. Right-click a cell to remove.</p>
+
+      <div class="shop">
+        <h3>Shop</h3>
+        <div class="shop-items">
+          <button class="shop-item" data-tool="printer-basic">Basic Printer<br>$100</button>
+          <button class="shop-item" data-tool="printer-fast">Fast Printer<br>$400</button>
+          <button class="shop-item" data-tool="conveyor">Conveyor<br>$25</button>
+          <button class="shop-item" data-tool="seller">Selling Station<br>$200</button>
+          <button class="shop-item" data-tool="erase">Eraser</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="btn-save">Save</button>
+        <button id="btn-load">Load</button>
+        <button id="btn-watch-ad">Watch Ad (Get $50)</button>
+      </div>
+
+      <div class="footer-note">Tip: Place conveyors and connect printers to sellers.</div>
     </aside>
   </main>
+  <div id="adOverlay" class="ad-overlay hidden">Watching ad...<div class="countdown" id="adCountdown">3</div></div>
   <script src="src/main.js"></script>
 </body>
 </html>
